@@ -1,5 +1,4 @@
 class Product {
-
   final String productId;
   final String name;
   final double price;
@@ -12,22 +11,20 @@ class Product {
     this.createdOn,
   });
 
-
   // ส่งค่าจากฟอร์มไปหา Firestore
-  Map<String, dynamic> toMap(){
+  Map<String, dynamic> toMap() {
     return {
-      'productId' : productId,
-      'name' : name,
-      'price' : price,
+      'productId': productId,
+      'name': name,
+      'price': price,
       'createdOn': createdOn
     };
   }
 
   // อ่านค่าจาก Firestore มาในโปรเจ็กต์
-  Product.fromFirestore(Map<String, dynamic> firestore) 
+  Product.fromFirestore(Map<String, dynamic> firestore)
       : productId = firestore['productId'],
         name = firestore['name'],
         price = firestore['price'],
         createdOn = firestore['createdOn'];
-
 }

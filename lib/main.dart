@@ -6,20 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
   // initial firebase
   await Firebase.initializeApp();
 
   runApp(MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     final fireStoreService = FirestoreService();
 
     return MultiProvider(
@@ -30,12 +27,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Firestore CRUD',
-        theme: ThemeData(
-          primarySwatch: Colors.blue
-        ),
+        theme: ThemeData(primarySwatch: Colors.blue),
         home: ProductScreen(),
       ),
     );
   }
 }
-
